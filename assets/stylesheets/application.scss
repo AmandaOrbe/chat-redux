@@ -1,7 +1,22 @@
 body {
   font-family: Helvetica;
 }
+
+*{
+margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+  border: 5px solid blue;
+  overflow: auto;
+  display: flex;
 }
+
+@import "channel_list";
+@import "message_list";
+@import "message";
+@import "message_form";

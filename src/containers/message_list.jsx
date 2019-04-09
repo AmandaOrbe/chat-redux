@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import { setFlats } from '../actions';
+import { fetchMessages } from '../actions';
 
 import Message from '../components/message';
+import MessageForm from '../containers/message_form';
 
 
 class MessageList extends Component  {
 
+  componentWillMount(){
+    this.props.fetchMessages(this.props.selectedChannel);
+  }
+
   render(){
     return (
 
-      <div className="flat-list col-sm-7">
+      <div className="message-list col-sm-7">
         {this.props.messages.map((message) => <Message content={message.content} author={message.author} key= {message.created_at}/>)}
-      {/*flat name should be an id, but for demonstration purposes it will be a name*/}
+        <MessageForm />
       </div>
       );
   }
@@ -22,15 +27,15 @@ class MessageList extends Component  {
 };
 
 
-  // function mapDispatchToProps(dispatch) {
-  //   return bindActionCreators({ setFlats: setFlats }, dispatch );
-  // }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchMessages: fetchMessages }, dispatch );
+}
 
-  function mapStateToProps(state) {
-    return {
-      messages: state.messages
-    };
-  }
+function mapStateToProps(state) {
+  return {
+    messages: state.messages
+  };
+}
 
 
-export default connect(mapStateToProps, null) (MessageList);
+export default connect(mapStateToProps, mapDispatchToProps) (MessageList);

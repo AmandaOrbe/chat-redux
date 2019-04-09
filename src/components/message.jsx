@@ -7,11 +7,9 @@ class Message extends Component  {
 
     return (
       // WARNING!!!! STYLE MUST BE AN OBJECT!!!
-      <div className="{classes}" >
-        <div className="card-description">
+      <div className="message" >
           <h3>{this.props.author}</h3>
           <p>{this.props.content}</p>
-        </div>
       </div>
     );
   }
