@@ -11,6 +11,7 @@ class MessageList extends Component  {
 
   componentWillMount(){
     this.props.fetchMessages(this.props.selectedChannel);
+
   }
 
   render(){

@@ -1,3 +1,24 @@
-.message_form{
+.message-form{
   border: 5px solid green;
+  position: relative;
+  min-height: 40px;
+}
+
+.button{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  border-radius: 3px;
+  max-width: 100px;
+}
+
+.input{
+  width: calc(100% - 100px);
+  height: 40px;
+  border: none;
 }

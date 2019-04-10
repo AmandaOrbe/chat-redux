@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Input from '../components/input';
+import Button from '../components/button';
 
 class MessageForm extends Component  {
 
@@ -7,9 +9,9 @@ class MessageForm extends Component  {
 
     return (
       // WARNING!!!! STYLE MUST BE AN OBJECT!!!
-      <div className="channel-list" >
-          <h3>MessageForm</h3>
-
+      <div className="message-form" >
+          <Input />
+          {/*<Button />*/}
       </div>
     );
   }

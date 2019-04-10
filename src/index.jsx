@@ -36,7 +36,7 @@ const initialState = {
   selectedChannel: 'general'
 };
 
-console.log(initialState.currentUser);
+
 
 const reducers = combineReducers({
   messages: messagesReducer,
@@ -50,7 +50,7 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {messages: initialState.messages, selectedChannel: initialState.selectedChannel }, middlewares)}>
+  <Provider store={createStore(reducers, {messages: initialState.messages, selectedChannel: initialState.selectedChannel , currentUser: initialState.currentUser , channels: initialState.channels }, middlewares)}>
     <App />
   </Provider>,
   document.getElementById('root')
